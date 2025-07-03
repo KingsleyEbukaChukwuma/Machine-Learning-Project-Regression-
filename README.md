@@ -41,15 +41,14 @@ Several columns have substantial missing values — notably `cond_class`, `build
 - Used `RandomizedSearchCV` with `TimeSeriesSplit(n_splits=3)` for time-aware tuning. Sampled 30,000 rows to manage runtime.
 - Best configuration: `learning_rate ≈ 0.0787`, `max_iter = 200`, `max_leaf_nodes = 15`, `min_samples_leaf = 10`. CV RMSE ≈ 97,413.
 
-### Evaluation and Prediction
+###  Evaluation and Prediction
 
 - In-sample R²: 0.9544.
-- Hold-out validation (5,000 rows): RMSE ≈ 93,061 (naive mean predictor RMSE ≈ 429,000).
+- Hold-out validation (5,000 rows): RMSE ≈ 93,061 (naïve mean predictor RMSE ≈ 429,000).
 - Residual analysis revealed larger errors for large apartments (> 100 m²) and certain months (Dec 2023, Mar 2024, Apr 2024).
 - Permutation importance confirmed top features: `market_volatility`, `loc_code_freq`, and `dim_m2`.
 
 ---
-
 
 ## Key Metrics
 
